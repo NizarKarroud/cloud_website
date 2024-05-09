@@ -1,0 +1,1 @@
+the forms are just templates for the project ( i have to add the yaml file creation and container creation khoud l code mn github d amine)
