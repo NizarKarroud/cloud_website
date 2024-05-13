@@ -1,3 +1,0 @@
-name: test
-email: test@gmail.com
-message: aaaaaaaaaaaa

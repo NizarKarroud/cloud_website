@@ -31,10 +31,14 @@ def send_email():
     if request.method == 'POST':
         client_email = request.form.get('client_email')
         ip_address = request.form.get('ip_address')
-        container_info = request.form.get('container_info')
+        access_point = request.form.get('Access_Point')
+        access_point_pwd = request.form.get('Access_point_pwd')
+        port = request.form.get('port')
+        service = request.form.get('service')
 
-        if client_email and ip_address and container_info:
-            send_email_notification(client_email, ip_address, container_info)
+
+        if client_email and ip_address and access_point and access_point_pwd and port :
+            send_email_notification(client_email, ip_address, access_point , access_point_pwd , port , service)
             return 'Email sent successfully!'
         else:
             return 'Missing required parameters in the request.', 400
@@ -47,11 +51,11 @@ def generate_filename(form_data):
     return f'{timestamp}_{username}_submission.txt'
 
 
-def send_email_notification(client_email, ip_address, container_info):
+def send_email_notification(client_email, ip_address, access_point , access_point_pwd , port , service):
     try :
         email_receiver = client_email
         subject = "CONTAINER's Creation response"
-        body = f'Your allocated IP address: {ip_address}\nContainer Info: {container_info}'
+        body = f'Service : {service}\nIP Address: {ip_address}\nPort: {port}\nAccess Point: {access_point}\nAccess Point Password: {access_point_pwd}'
         em = EmailMessage()
         em['FROM'] = email_sender
         em['TO'] = email_receiver

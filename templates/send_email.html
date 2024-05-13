@@ -56,10 +56,22 @@
     <form method="POST" action="/send_email">
         <label for="client_email">Client Email:</label>
         <input type="email" id="client_email" name="client_email" required><br>
+
+        <label for="service">Service :</label>
+        <input type="text" id="service" name="service" required><br>
+
         <label for="ip_address">IP Address:</label>
         <input type="text" id="ip_address" name="ip_address" required><br>
-        <label for="container_info">Container Info:</label><br>
-        <textarea id="container_info" name="container_info" rows="4" required></textarea><br>
+
+        <label for="port">Port:</label>
+        <input type="text" id="port" name="port" required><br>
+
+        <label for="Access_Point">Access Point:</label>
+        <input type="text" id="Access_Point" name="Access_Point" required><br>
+
+        <label for="Access_point_pwd">Access Point Password:</label><br>
+        <input type="text" id="Access_point_pwd" name="Access_point_pwd" required><br>
+
         <input type="submit" value="Send Email">
     </form>
 </body>
